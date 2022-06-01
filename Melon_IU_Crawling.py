@@ -27,10 +27,13 @@ print("  아이유 앨범정보 [최신순]")
 for i in range(15):
   print('%3d - 앨범 이름: %s - %s - 앨범 발매일: %s'%(i+1, title[i], song[i], release_date[i]))
   
-  #순위 검색시 나오는 앨범 이름, 년도, 곡 수
-n=int(input('최신순으로 나열한 앨범 중 몇 번째 것의 정보를 원하십니까?'))
+#순위 검색시 나오는 앨범 이름, 년도, 곡 수
 
-if n<=0 or n>=16:
+while True:
+  n=int(input('최신순으로 나열한 앨범 중 몇 번째 것의 정보를 원하십니까? 중단 시 0을 입력해주세요.'))
+  if n>=16:
     print('다시 입력해주세요')
-else: 
+  elif 1<=n<=15: 
     print(f'{n} - 앨범 이름: {title[n-1]} - {song[n-1]} - 앨범 발매일 - {release_date[n-1]}')
+  else:
+    break
